@@ -1,0 +1,19 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "this is a package project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elaninhust/package.git"
+  },
+  "author": "Elan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elaninhust/package/issues"
+  },
+  "homepage": "https://github.com/elaninhust/package#readme"
+}
