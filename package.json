@@ -4,7 +4,8 @@
   "description": "this is a package project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fetch": "node ./index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/elaninhust/package/issues"
   },
-  "homepage": "https://github.com/elaninhust/package#readme"
+  "homepage": "https://github.com/elaninhust/package#readme",
+  "dependencies": {
+    "node-fetch": "^2.3.0",
+    "request": "^2.88.0"
+  }
 }
