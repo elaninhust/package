@@ -22,22 +22,22 @@ async function getData(){
     data.cards.forEach(ele => {
       // console.log(ele.mblog.page_info)
       if(ele.card_type === 9 && ele.mblog !== undefined && ele.mblog.page_info !== undefined &&  ele.mblog.page_info.type === "video" && /\[第(\d)+次\]/.test(ele.mblog.page_info.media_info.next_title)){
-        let title = ele.mblog.page_info.media_info.next_title.match(/\[第(\d)+次\]/)[0]
+        let title = ele.mblog.page_info.media_info.next_title.match(/第(\d)+次/)[0]
         let url = ele.mblog.page_info.media_info.mp4_720p_mp4
-        console.log(ele.mblog.page_info.media_info.next_title.match(/\[第(\d)+次\]/)[0], ele.mblog.page_info.media_info.mp4_720p_mp4)
-        result[ele.mblog.page_info.media_info.next_title.match(/\[第(\d)+次\]/)[0]] = ele.mblog.page_info.media_info.mp4_720p_mp4
+        console.log(title, url)
+        result[title] = url
         num ++
 
-        let stream = fs.createWriteStream(path.join(__dirname, `./dist/video/${title}.mp4`))
-        request(url).pipe(stream).on('close', () => {
-          console.log(`${title}下载完成`)
-        }); 
+        // let stream = fs.createWriteStream(path.join(__dirname, `./dist/video/${title}.mp4`))
+        // request(url).pipe(stream).on('close', () => {
+        //   console.log(`${title}下载完成`)
+        // }); 
 
       }
     })
   }
 
-  if(page < 10){
+  if(page < 5){
     page ++
     getData()
   }else{
