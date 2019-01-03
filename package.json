@@ -6,7 +6,7 @@
   "scripts": {
     "fetch": "node ./index.js",
     "ls": "node ./lib/ls/index.js",
-    "download": "node ./lib/download/index.js"
+    "d": "node ./lib/download/index.js"
   },
   "repository": {
     "type": "git",
