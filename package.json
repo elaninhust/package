@@ -4,7 +4,6 @@
   "description": "this is a package project",
   "main": "index.js",
   "scripts": {
-    "fetch": "node ./index.js",
     "ls": "node ./lib/ls/index.js",
     "d": "node ./lib/download/index.js"
   },
