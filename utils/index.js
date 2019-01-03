@@ -3,6 +3,7 @@ const fetch = require('node-fetch')
 const fs = require('fs')
 const request = require('request');
 const spin = require('io-spin')
+const chalk = require('chalk')
 
 const getApiUrl =  function(page){
   return `https://m.weibo.cn/api/container/getIndex?containerid=2304132948117283_-_WEIBO_SECOND_PROFILE_WEIBO&page_type=01&page=${page}`
@@ -47,14 +48,18 @@ const getList = function(page = 1){
  * @param {title} name 
  */
 const downloadVideo = function (options){
-  let stream = fs.createWriteStream(path.join(__dirname, `../dist/video/${options.title}.mp4`))
-  request(options.url).pipe(stream)
-    .on('error', () => {
-      console.log(`视频${options.title}下载失败...`)
-    })
-    .on('close', () => {
-    console.log(`视频${options.title}下载完成...`)
-  }); 
+  return new Promise((resolve, reject) => {
+    let stream = fs.createWriteStream(path.join(__dirname, `../dist/video/${options.title}.mp4`))
+    request(options.url).pipe(stream)
+      .on('error', () => {
+        console.log(`视频${chalk.yellow(options.title)}${chalk.red('下载失败')}...`)
+        reject()
+      })
+      .on('close', () => {
+        console.log(`视频${chalk.yellow(options.title)}${chalk.green('下载完成')}...`)
+        resolve()
+      });
+  }) 
 }
 
 module.exports = {
