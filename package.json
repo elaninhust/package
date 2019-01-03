@@ -4,8 +4,9 @@
   "description": "this is a package project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "fetch": "node ./index.js"
+    "fetch": "node ./index.js",
+    "ls": "node ./lib/ls/index.js",
+    "download": "node ./lib/download/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,9 @@
   },
   "homepage": "https://github.com/elaninhust/package#readme",
   "dependencies": {
+    "chalk": "^2.4.1",
+    "inquirer": "^6.2.1",
+    "io-spin": "^0.4.1",
     "node-fetch": "^2.3.0",
     "request": "^2.88.0"
   },
