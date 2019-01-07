@@ -49,6 +49,7 @@ const getList = function(page = 1){
  */
 const downloadVideo = function (options){
   if (!fs.existsSync(path.join(__dirname, '../dist/video/'))){
+    fs.mkdirSync(path.join(__dirname, '../dist/'))
     fs.mkdirSync(path.join(__dirname, '../dist/video/'))
   }
   return new Promise((resolve, reject) => {
