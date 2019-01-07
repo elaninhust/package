@@ -48,6 +48,9 @@ const getList = function(page = 1){
  * @param {title} name 
  */
 const downloadVideo = function (options){
+  if (!fs.existsSync(path.join(__dirname, '../dist/video/'))){
+    fs.mkdirSync(path.join(__dirname, '../dist/video/'))
+  }
   return new Promise((resolve, reject) => {
     let stream = fs.createWriteStream(path.join(__dirname, `../dist/video/${options.title}.mp4`))
     request(options.url).pipe(stream)
