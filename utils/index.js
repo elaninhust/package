@@ -26,7 +26,7 @@ const getList = function(page = 1){
       data.cards.forEach(ele => {
         if(ele.card_type === 9 && ele.mblog !== undefined && ele.mblog.page_info !== undefined &&  ele.mblog.page_info.type === "video" && /\[第(\d)+次\]/.test(ele.mblog.page_info.media_info.next_title)){
           let title = ele.mblog.page_info.media_info.next_title.match(/第(\d)+次/)[0]
-          let url = ele.mblog.page_info.media_info.mp4_720p_mp4
+          let url = ele.mblog.page_info.media_info.mp4_hd_url || ele.mblog.page_info.media_info.mp4_720p_mp4 || ele.mblog.page_info.media_info.mp4_hd_url || ele.mblog.page_info.media_info.mp4_sd_url
           result.push({
             title: title,
             url: url

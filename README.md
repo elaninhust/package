@@ -37,7 +37,8 @@
               content2: '',
               mp4_sd_url: '',
               mp4_hd_url: '',
-              mp4_720p_mp4: ''
+              mp4_720p_mp4: '',
+              mp4_hd_url: ''
             }
           }
         }
