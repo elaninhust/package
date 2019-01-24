@@ -35,7 +35,6 @@ const getList = function(page = 1) {
             /第(\d)+次/
           )[0];
           let url =
-            ele.mblog.page_info.media_info.mp4_hd_url ||
             ele.mblog.page_info.media_info.mp4_720p_mp4 ||
             ele.mblog.page_info.media_info.mp4_hd_url ||
             ele.mblog.page_info.media_info.mp4_sd_url;
